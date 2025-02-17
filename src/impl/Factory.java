@@ -1,5 +1,7 @@
 package impl;
 
+import common.StackEmptyException;
+import common.StackOverflowException;
 import interfaces.IDoubleStack;
 import interfaces.IFactory;
 import interfaces.IQueue;
@@ -28,15 +30,17 @@ public final class Factory implements IFactory {
     }
 
     @Override
-    public IDoubleStack makeDoubleStack(int maxSize) {
+    public IDoubleStack makeDoubleStack(int maxSize) throws StackOverflowException, StackEmptyException {
         // TODO need to implement this
-        return null;
+        DoubleStack myDoubleStack = new DoubleStack(maxSize);
+        return myDoubleStack;
     }
 
     @Override
     public IQueue makeDoubleStackQueue(int maxSize) {
         // TODO need to implement this
-        return null;
+        DoubleStackQueue queue = new DoubleStackQueue(maxSize);
+        return queue;
     }
 
 }

@@ -1,6 +1,9 @@
 package interfaces;
 
 
+import common.StackEmptyException;
+import common.StackOverflowException;
+
 /**
  * Interface for a factory allowing the other interfaces to be instantiated without knowing the implementation classes.
  *
@@ -12,7 +15,7 @@ public interface IFactory {
      * @param maxSize the maximum size of the stack
      * @return the double stack
      */
-    IDoubleStack makeDoubleStack(int maxSize);
+    IDoubleStack makeDoubleStack(int maxSize) throws StackOverflowException, StackEmptyException;
 
 
     /**
